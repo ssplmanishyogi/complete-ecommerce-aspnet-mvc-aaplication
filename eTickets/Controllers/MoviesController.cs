@@ -19,7 +19,7 @@ namespace eTickets.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var allMovies = await _context.Movies.Include(x=> x.Cinema_Movies).ThenInclude(x => x.Cinema).OrderBy(o => o.Name).ToListAsync();
+            var allMovies = await _context.Movies.Include(x=> x.Cinema_Movies).ThenInclude(x => x.Cinema).ToListAsync();
             return View(allMovies);
         }
     }
